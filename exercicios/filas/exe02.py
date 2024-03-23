@@ -1,3 +1,6 @@
+## Altere o programa anterior(filas/exe01.py) para utilizar um menu com opções,
+## permitindo inserção, exclusão e impressão de nomes em uma fila.
+
 class Fila:
     __fila = []
 
