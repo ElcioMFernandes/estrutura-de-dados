@@ -1,3 +1,13 @@
+## Construa um programa para manipular elementos inteiros na fila, com
+## as seguintes opções no menu:
+## 1 – Incluir inteiro na fila
+## 2 – Excluir inteiro da fila
+## 3 – Imprimir o primeiro inteiro da fila
+## 4 – Imprimir todos os inteiros da fila
+## 5 – Excluir todos os inteiros da fila
+## 6 – Inverter os inteiros da fila
+## 7 – Imprimir os inteiros pares e depois os inteiros ímpares
+
 class Fila:
     __fila = []
 
