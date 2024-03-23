@@ -1,3 +1,6 @@
+## Construa um programa que insere nomes em uma fila, imprimindo a
+## fila completa a cada inserção.
+
 class Fila:
     __fila = []
 
