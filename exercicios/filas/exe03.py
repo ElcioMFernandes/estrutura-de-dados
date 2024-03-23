@@ -1,3 +1,6 @@
+## Inclua no programa anterior(filas/exe02.py) a opção de imprimir o primeiro elemento
+## da fila.
+
 class Fila:
     __fila = []
 
