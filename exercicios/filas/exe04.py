@@ -91,7 +91,7 @@ class Fila:
             '8':self.__exit,
         }
 
-        option = input('1 - Incluir inteiro na fila\n2 - Excluir inteiro da fila\n3 - Imprimir o primeiro inteiro da fila\n4 - Imprimir todos os inteiros da fila\n5 - Excluir todos os inteiros da fila\n6 - Inverter os inteiros da fila\n7 - Imprimir os inteiros pares e depois os inteiros ímpares da fila\n8 - Sair\n\n>> ')
+        option = input('1 - Incluir inteiro na fila\n2 - Excluir primeiro inteiro da fila\n3 - Imprimir o primeiro inteiro da fila\n4 - Imprimir todos os inteiros da fila\n5 - Excluir todos os inteiros da fila\n6 - Inverter os inteiros da fila\n7 - Imprimir os inteiros pares e depois os inteiros ímpares da fila\n8 - Sair\n\n>> ')
         
         function = OPTIONS.get(option)
 
