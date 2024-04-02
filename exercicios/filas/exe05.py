@@ -7,76 +7,69 @@
 ## filas geradas. Caso alguma das filas seja vazia, deve-se
 ## imprimir “Fila vazia”.
 
-class Row:
+class Queue:
     __stack = None
-    __row_pair = None
-    __row_odd = None
+    __pair = None
+    __odd = None
 
-    def __validate(self, argument_to_validate):
-        if argument_to_validate:
-            return True
+    def __init__(self) -> None:
+        self.__stack = []
+        self.__pair = []
+        self.__odd = []
+        self.entry_stack() 
+        print(self.__str__())
+
+    def __str__(self) -> str:
+        string = 'Pilha:\n\n'
+        while self.__stack:
+            string += f"[{self.__stack.pop()}]\n"
+        
+        string += ' ^ Fim da pilha\n\nÍmpares: '
+
+        if self.__odd:
+            while self.__odd:
+                string += f"{self.__odd.pop(0)}, "
         else:
-            return False
-
-    def __to_string(self, attribute, index=0):
-        string = ''
-        if self.__validate(attribute):
-            while attribute:
-                string += f"{self.__stack.pop(index)}, "
-            else:
-                return string
-
-    def __present_attributes(self):
-        stack = self.__to_string(self.__stack, -1)
-        print(f"Stack = {stack}")
-        odd = self.__to_string(self.__row_odd)
-        print(f"Odd row = {odd}")
-        pair = self.__to_string(self.__row_pair)
-        print(f"Even  queue = {pair}")
-        exit(0)
-
-    def __set_odd_pair(self):
-        if self.__validate(self.__stack):
-            auxiliary_battery = []
-            while self.__stack:
-                auxiliary_battery.append(self.__stack.pop())
-                if auxiliary_battery[-1] % 2 == 0:
-                    self.__row_pair.append(auxiliary_battery[-1])
-                else:
-                     self.__row_odd.append(auxiliary_battery[-1])
-            else:
-                while auxiliary_battery:
-                    self.__stack.append(auxiliary_battery.pop())
+            string += 'Fila vazia'
+        
+        string += '\nPares: '
+        if self.__pair:    
+            while self.__pair:
+                string += f"{self.__pair.pop(0)}, "
         else:
-            print('Empty stack')
-            exit(0)
+            string += 'Fila vazia'
 
-    def __set_stack(self):
+        return string
+
+    def entry_stack(self) -> None:
         flag = True
         while flag:
-            value = input("Enter a value: ")
+            value = input('Entre com um valor: ')
             try:
                 value = int(value)
                 if value > 0:
                     self.__stack.append(value)
                 else:
                     flag = False
+                    self.separate()
+
             except ValueError:
-                print("Value invalid :(, but don't worry, try again... =D")
-                self.__set_stack()
+                print(f'Valor {value} inválido.')
 
-    def __main(self):
-        try:
-            self.__set_stack()
-            self.__set_odd_pair()
-            self.__present_attributes()
-        except Exception as e:
-            print(e)
+    def separate(self):
+        if self.__stack:
+            aux = []
+            while self.__stack:
+                aux.append(self.__stack[-1])
 
-    def __init__(self):
-        self.__stack = []
-        self.__row_pair = []
-        self.__row_odd = []
-        self.__main()
-        
-teste = Row()
+                if self.__stack[-1] % 2 == 0:
+                    self.__pair.append(self.__stack.pop())
+                else:
+                    self.__odd.append(self.__stack.pop())
+
+            else:
+                while aux:
+                    self.__stack.append(aux.pop())
+
+if __name__ == '__main__':
+    Queue()
