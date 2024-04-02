@@ -8,10 +8,12 @@
 ## imprimir “Fila vazia”.
 
 class Queue:
+    ## Dados
     __stack = None
     __pair = None
     __odd = None
 
+    ## Método construtor
     def __init__(self) -> None:
         self.__stack = []
         self.__pair = []
@@ -19,6 +21,7 @@ class Queue:
         self.entry_stack() 
         print(self.__str__())
 
+    ## Função para imprimir a pilha, a fila de ímpares e pares
     def __str__(self) -> str:
         string = 'Pilha:\n\n'
         while self.__stack:
@@ -40,7 +43,8 @@ class Queue:
             string += 'Fila vazia'
 
         return string
-
+    
+    ## Entrada de valores na pilha
     def entry_stack(self) -> None:
         flag = True
         while flag:
@@ -56,6 +60,7 @@ class Queue:
             except ValueError:
                 print(f'Valor {value} inválido.')
 
+    ## Separa a pilha em duas filas, uma par e outra impar
     def separate(self):
         if self.__stack:
             aux = []
@@ -71,5 +76,6 @@ class Queue:
                 while aux:
                     self.__stack.append(aux.pop())
 
+## Inicialização
 if __name__ == '__main__':
     Queue()
