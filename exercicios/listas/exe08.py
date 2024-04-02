@@ -1,0 +1,1 @@
+## Refaça o exercício 07, mas agora, que permita manipular inteiros.

@@ -1,0 +1,1 @@
+## Altere o programa anterior, para permitir a exclusão de um nome na lista (na primeira ocorrência que encontrar).
