@@ -1,0 +1,3 @@
+## Faça um programa que cadastre em uma pilha encadeada vários números. A entrada deles será finalizada com a digitação de um número menor ou igual a zero.
+## Posteriormente, o programa deve gerar duas filas encadeadas, a primeira com os números pares e a segunda com os números ímpares.
+## A saída do programa deve apresentar a pilha digitada e as filas geradas. Caso alguma das filas seja vazia, deve-se imprimir “Fila vazia”.
