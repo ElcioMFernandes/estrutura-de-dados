@@ -8,24 +8,24 @@ class Node:
     def __init__(self) -> None:
         self.__data = None
         self.__next = None
-        
+
     def set_data(self, data: int) -> None:
         self.__data = data
-        
+
     def get_data(self) -> int:
         return self.__data
-    
+
     def set_next(self, next: 'Node') -> None:
         self.__next = next
-        
+
     def get_next(self) -> 'Node':
         return self.__next
-    
+
 class LinkedList:
     def __init__(self) -> None:
         self.__initial = None
         self.__end = None
-        
+
     def push(self) -> None:
         node = Node() ## Instancia um novo nó
         if node: ## Se o nó foi instanciado
@@ -46,7 +46,7 @@ class LinkedList:
                 current.set_next(node) ## O nó auxiliar assume o nó
         else: ## Se o nó não foi instanciado
             print('Memória insuficiente')
-            
+
     def pop(self) -> None:
         if self.__initial: ## Se a lista não estiver vazia
             data = int(input('Digite um número para excluir: '))
@@ -65,7 +65,7 @@ class LinkedList:
                 node = node.get_next() ## O nó auxiliar assume o próximo nó
         else: ## Se a lista estiver vazia
             print('Lista vazia') ## Exibe uma mensagem
-            
+
     def show(self) -> None: 
         if self.__initial: ## Se a lista não estiver vazia
             current = self.__initial ## Cria um nó auxiliar que começa no início da lista
@@ -74,10 +74,10 @@ class LinkedList:
                 current = current.get_next() ## current assume o próximo nó
         else: ## Se a lista estiver vazia
             print('Lista vazia') ## Exibe uma mensagem
-            
+
     def empty(self) -> None:
         self.__initial = self.__end = None ## O início e o fim da lista são nulos, esvaziando a lista
-        
+
 linked_list = LinkedList()
 while True:
     print('1 - Inserir um número')
